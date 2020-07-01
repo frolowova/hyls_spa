@@ -1,0 +1,454 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.body,
+.html {
+  height: 100vh;
+}
+
+.app {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  position: relative;
+}
+
+.menu {
+  z-index: 101;
+  height: 56px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 900px;
+}
+
+.menu__btns {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr max-content;
+      grid-template-columns: 1fr 1fr -webkit-max-content;
+      grid-template-columns: 1fr 1fr max-content;
+  height: 100%;
+}
+
+.btn {
+  height: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #ebebeb;
+}
+
+.btn:hover,
+.btn:focus {
+  -webkit-box-shadow: 0 2px 0 #b5d3b5;
+          box-shadow: 0 2px 0 #b5d3b5;
+}
+
+.btn a {
+  text-decoration: none;
+  color: #444444;
+  font-size: 14px;
+  outline: none;
+}
+
+.btn-active {
+  -webkit-box-shadow: 0 2px 0 #46d444;
+          box-shadow: 0 2px 0 #46d444;
+  background-color: white;
+  font-weight: bold;
+}
+
+.btn-no-active {
+  background-color: #fefefe;
+  font-weight: normal;
+}
+
+.page {
+  padding-top: 60px;
+  padding-bottom: 140px;
+  background-color: #eceff0;
+}
+
+.content-header {
+  position: relative;
+  padding-bottom: 170px;
+  margin-top: 30px;
+}
+
+.content-header__text {
+  position: absolute;
+  left: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  z-index: 10;
+  height: 150px;
+  width: 166px;
+  font-size: 14px;
+  line-height: 1.5rem;
+}
+
+.content-header__text h1 {
+  margin-bottom: 10px;
+}
+
+.content-header__img img {
+  position: absolute;
+  height: 190px;
+  width: 230px;
+  right: 0;
+  top: -30px;
+}
+
+.content-list {
+  margin-top: 20px;
+}
+
+.tabs {
+  width: 100%;
+  display: inline-block;
+  padding: 0px;
+  margin: 0 auto;
+}
+
+/* Стили секций с содержанием */
+.tabs > section {
+  display: none;
+  grid-area: list;
+  width: 100%;
+  padding: 15px;
+  background-color: #eceff0;
+  border: 1px solid #ddd;
+}
+
+.tabs > section > p {
+  margin: 0 0 5px;
+  line-height: 1.5;
+  color: #383838;
+  /* прикрутим анимацию */
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+/* Описываем анимацию свойства opacity */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Прячем чекбоксы */
+.tabs > input {
+  display: none;
+  position: absolute;
+}
+
+/* Стили переключателей вкладок (табов) */
+.tabs > label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 10px;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+  color: #aaa;
+  border: 0px solid #ddd;
+  border-width: 1px 1px 1px 1px;
+  background: #f1f1f1;
+  border-radius: 5px 5px 0 0;
+}
+
+/* Изменения стиля переключателей вкладок при наведении */
+.tabs > label:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+/* Стили для активной вкладки */
+.tabs > input:checked + label {
+  color: #555;
+  border-bottom: 1px solid #fff;
+  background: #fff;
+}
+
+/* Активация секций с помощью псевдокласса :checked */
+#tab1:checked ~ #content-tab1,
+#tab2:checked ~ #content-tab2,
+#tab3:checked ~ #content-tab3,
+#tab4:checked ~ #content-tab4 {
+  display: block;
+}
+
+.cards-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.card {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 3fr;
+      grid-template-columns: 2fr 3fr;
+  margin: 20px auto;
+  background-color: white;
+  -webkit-box-shadow: 2px 2px 4px gray;
+          box-shadow: 2px 2px 4px gray;
+  border-radius: 10px;
+  max-width: 600px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.card-disabled {
+  background-color: #e6e6e6;
+  cursor: inherit;
+}
+
+.card__video {
+  padding: 5px;
+}
+
+.card__video img {
+  width: 100%;
+}
+
+.card-disabled .card__video {
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+}
+
+.card__content {
+  padding-top: 25px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+}
+
+.card__content p {
+  text-align: left;
+  color: #444444;
+  font-size: 14px;
+}
+
+.card-disabled .card__content p {
+  color: #969696;
+}
+
+.card__time {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 10px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #c8c8c8;
+  font-size: 12px;
+  color: white;
+}
+
+.card__time p {
+  position: relative;
+}
+
+.card-disabled .card__time p::before {
+  content: '\f023 ';
+  font-family: FontAwesome;
+  position: absolute;
+  left: -10px;
+  top: 1px;
+}
+
+.block-general-btn {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 100px;
+  z-index: 30;
+}
+
+.general-btn {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 340px;
+  height: 60px;
+  background-color: #c3cbce;
+  border-radius: 30px;
+  border: 2px solid whitesmoke;
+  -webkit-box-shadow: 0 0 3px grey;
+          box-shadow: 0 0 3px grey;
+  margin: auto;
+  cursor: pointer;
+}
+
+.general-btn-active {
+  background-color: #46d444;
+}
+
+.general-btn__title {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: whitesmoke;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.general-btn__circle {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  background-color: whitesmoke;
+  border-radius: 50px;
+  top: 2px;
+  left: 2px;
+}
+
+.circle-position {
+  top: 2px;
+  left: 2px;
+}
+
+.circle-position-active {
+  left: 281px;
+}
+
+.general-btn__circle__wrapp {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.general-btn__circle-check {
+  color: #c3cbce;
+}
+
+.general-btn__circle-check-active {
+  color: #46d444;
+}
+
+.footer-menu {
+  z-index: 101;
+  height: 56px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 900px;
+  background-color: #383838;
+}
+
+@media screen and (min-width: 420px) {
+  .content-header {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 3fr;
+        grid-template-columns: 2fr 3fr;
+    min-height: 150px;
+    padding-bottom: 0;
+  }
+  .content-header__text {
+    position: relative;
+    margin: 0 auto;
+    width: auto;
+  }
+  .content-header__img img {
+    position: relative;
+  }
+  .tabs > label {
+    font-size: 14px;
+  }
+  .content-list {
+    margin-top: 0;
+  }
+  .card__content p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .content-header {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    padding-bottom: 0;
+  }
+  .content-header__text {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .content-header__img img {
+    position: relative;
+    top: 0;
+  }
+  .card__video {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/7138c506b6.js"></script>
+    <title>Марафоны HYLS</title>
+  </head>
+
+  <body>
+    <div class="app">
+      <div class="container">
+
+        <header>
+          <nav class="menu">
+            <div class="menu__btns">
+              <button class="btn btn-practica" autofocus> 
+                <a href="#" tabindex="-1">
+                  <i class="fa fa-check fa-2x" aria-hidden="true"></i>
+                  <span>&nbsp; Практика</span>
+                </a>
+              </button>
+              <button class="btn btn-statistica">
+                <a href="#" tabindex="-1">
+                  <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>&nbsp;
+                  Статистика
+                </a>
+              </button>
+              <button class="btn btn-settings">
+                <a href="#" tabindex="-1">
+                  <i class="fa fa-cog fa-fw fa-2x" aria-hidden="true"></i>&nbsp;
+                </a>
+              </button>
+            </div>
+          </nav>
+        </header>
+
+        <div class="page">
+          <div class="content">
+            <div class="content-header">
+              <div class="content-header__text">
+                <h1>Асаны</h1>
+                <p>
+                  Выберите любимый комплекс, выполните асаны и нажмите кнопку "Отметьте практику"
+                </p>
+              </div>
+              <div class="content-header__img">
+                <img src="./static/asan_.png" alt="" />
+              </div>
+            </div>
+
+            <div class="content-list">
+              <div class="content-list__tabs tabs">
+                <input id="tab1" type="radio" name="tabs" checked />
+                <label for="tab1" title="Для начинающих">НАЧИНАЮЩИМ</label>
+                <input id="tab2" type="radio" name="tabs" />
+                <label for="tab2" title="Для продолжающих"
+                  >ПРОДОЛЖАЮЩИМ</label
+                >
+                <input id="tab3" type="radio" name="tabs" />
+                <label for="tab3" title="На растяжку">РАСТЯЖКА</label>
+                
+                <section id="content-tab1">
+                      <!-- Внутри будут размещаться карточки генерируемые в js -->
+                      <!-- Пример блока карточки   -->
+                      <!-- <div class="cards-list">
+                            <div class="card">                            
+                            <div class="card__video">
+                                <img src="./static/video.png" alt="">
+                            </div>
+                            <div class="card__content">
+                                <p>Комплекс асан на баланс 12 видео</p>
+                            </div>
+                            <div class="card__time">
+                                <p>30 мин</p>
+                            </div>
+                        </div>
+                    <div class="card card-disabled">
+                        <div class="card__video">
+                            <img src="./static/video.png" alt="">
+                        </div>
+                        <div class="card__content">
+                            <p>Комплекс и разбор асаны: Кармасана</p>
+                        </div>
+                        <div class="card__time">
+                            <p>20 мин</p>
+                        </div>
+                    </div>
+                </div> -->
+                </section>
+                
+                <section id="content-tab2">
+                  <!-- Внутри будут размещаться карточки генерируемые в js -->
+                </section>
+                <section id="content-tab3">
+                  <!-- Внутри будут размещаться карточки генерируемые в js -->
+                </section>
+            </div>
+          </div>
+        </div>
+
+        <!-- КНОПКА -->
+        <div class="block-general-btn">
+            <div class="general-btn">
+                <div class="general-btn__title"> <p> ОТМЕТИТЬ ПРАКТИКУ</p></div>
+                <div class="general-btn__circle circle-position">
+                    <div class="general-btn__circle__wrapp">
+                        <div class="general-btn__circle-check">
+                            <i class="fa fa-check fa-2x" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-menu">Меню футера</div>
+        </footer>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
